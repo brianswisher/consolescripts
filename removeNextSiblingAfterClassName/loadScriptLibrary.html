@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>loadScriptLibrary:</title>
+</head>
+<body>
+  <button onclick='report(
+  
+    //example:
+    (function(){var C,E,B,A=arguments.length,D=[];for(C=0;C<A;C++){if(arguments.hasOwnProperty(C)){E=arguments[C];B=document.createElement("script");B.src=E;document.head.appendChild(B);D.push(B);}}return D;}("http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"))
+  
+  );'>loadScriptLibrary( jQuery via Google's CDN )</button>
+  <div id="result" style="color: green;font-weight:bold;"></div>
+  <script type="text/javascript">
+    var report = function(loadedScripts) {
+      var i, result = document.getElementById("result");
+      result.innerHTML = "loaded " + loadedScripts.length + " script libraries" +
+       ( loadedScripts.length > 1 ? "s" : "" ) + "."       
+      if (console && console.log) {
+        result.innerHTML += " *see console";
+        console.log(loadedScripts);
+      }
+    }
+  </script>
+</body>
+</html>

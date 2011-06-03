@@ -7,4 +7,4 @@ This is a library of javascript utilities that can be used on web pages at runti
 1. Wrapped in JavaScript closures to protect namespaces.
 2. Small, specific, & portable.
 3. Don't take the time to degrade for less capable browsers.
-4. Pass JSLINT.
+4. Pass JSLINT, unless justified otherwise.

@@ -1,11 +1,5 @@
-/* loadScriptLibrary - A script to load external javascript libraries.
-	*Note, loaded libraries won't be available immediately. Use a setTimeout to use them.
- * Copyright 2011, Brian Swisher, brianswisher.com
- * @param arguments {Array<String>}
- * @return {Array<node>} array of script libraries attached
- */
 /*global document */
-(function(){ //load js libraries
+(function(){
      var i, src, scriptNode, max = arguments.length, scriptNodes = [];
      for (i = 0; i < max; i++) {
 		if (arguments.hasOwnProperty(i)) {
@@ -17,4 +11,14 @@
 		}
      }
      return scriptNodes;
-}("http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"));
+}(
+    /**
+     * loadScriptLibrary - A script to load external javascript libraries.
+     * Copyright 2011, Brian Swisher, brianswisher.com - MIT Licensed
+     *  - loaded libraries won't be available immediately. Use a setTimeout to use them.
+     *  - you can pass multiple libraries separated by commas.     
+     * @param {Array<String>} arguments - one or more paths to script libraries
+     * @return {Array<node>} - array of script libraries attached
+     */
+    "http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"
+));
